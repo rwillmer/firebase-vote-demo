@@ -67,8 +67,7 @@
         function initChoices() {
             var options = ['AngularJS', 'Ember', 'ReactJS', 'Ionic'];
 
-            // debugger;
-            for (var i in options) {
+            for (var i = 0; i < options.length; i++) {
                 var opt = options[i];
                 var choice = {
                     count: 0,
@@ -85,13 +84,12 @@
             );
             vm.choices.$loaded()
                 .then(function(data) {
-                    // debugger;
                     if (!data.length) {
                         initChoices();
                     }
                 })
                 .catch(function(error) {
-                    console.error("Error:", error);
+                    console.error('Error:', error);
                 });
         }
 
@@ -108,8 +106,10 @@
 
             ref.authWithOAuthRedirect('twitter', function(error) {
                 if (error) {
+                    // debugger;
                     console.log('Login Failed!', error);
                 } else {
+                    // debugger;
                     /* jshint -W035 */
                     // We'll never get here, as the page will redirect on success.
                 }
