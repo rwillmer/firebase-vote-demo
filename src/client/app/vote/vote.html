@@ -1,0 +1,38 @@
+<section class="mainbar">
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+                <div class="widget">
+                    <div ng-if="user === null">
+                        <!-- Login buttons -->
+                        <div id="loginButtons" ng-hide="authData">
+                          <div id="twitterLoginButton" ng-click="vm.loginWith('twitter')"
+                            class='btn btn-info'>
+                            <img src="./images/twitterLogo.png" width='25px' height='25px'/>
+                            Login with Twitter
+                          </div>
+
+                          <div style="clear: both;"></div>
+                        </div>
+                    </div>
+                    <div ng-if="user !== null">
+                        You are logged in as {{user.userName}} on {{user.provider}}.
+                    </div>
+                </div>
+                <div class="widget wviolet">
+                    <div ht-widget-header title="What's Your Favourite JavaScript Framework?"></div>
+                    <div class="widget-content user">
+                    <h3>We Prefer ...</h3>
+                    <ul class='voting-table'>
+                        <li demo-vote-choice ng-repeat="choice in vm.choices|reverse">
+                        </li>
+                    </ul>
+                    </div>
+                    <div class="widget-foot">
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
